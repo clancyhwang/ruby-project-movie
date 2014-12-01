@@ -69,4 +69,14 @@ describe Movie do
     end
   end
   
+  it "is sorted by decreasing rank" do
+    movie1 = Movie.new("goonies", 100)
+    movie2 = Movie.new("ghostbusters", 200)
+    movie3 = Movie.new("goldfinger", 300)
+    
+    movies = [movie1, movie2, movie3]
+    
+    movies.sort.should == [movie3, movie2, movie1]
+  end
+  
 end

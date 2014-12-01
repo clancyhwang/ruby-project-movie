@@ -1,7 +1,7 @@
 class Movie
   attr_accessor :title
   attr_reader :rank
-  
+    
   def initialize(title, rank=0)
     @title = title.capitalize
     @rank = rank
@@ -25,6 +25,10 @@ class Movie
   
   def to_s
     "#{@title} has a rank of #{@rank} (#{status})"
+  end
+  
+  def <=>(other)
+    other.rank <=> @rank
   end
 end
 
